@@ -1,4 +1,5 @@
 ﻿
+using System;
 using SingleResponsibilityPrinciple.Contracts;
 
 namespace SingleResponsibilityPrinciple
@@ -17,6 +18,14 @@ namespace SingleResponsibilityPrinciple
             var lines = tradeDataProvider.GetTradeData();
             var trades = tradeParser.Parse(lines);
             tradeStorage.Persist(trades);
+            string url = "http://faculty.css.edu/tgibbons/trades4.txt";
+            URLTradeDataProvider(url);
+
+        }
+
+        private void URLTradeDataProvider(string url)
+        {
+            throw new NotImplementedException();
         }
 
         private readonly ITradeDataProvider tradeDataProvider;
